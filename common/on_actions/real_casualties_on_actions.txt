@@ -22,7 +22,6 @@ on_actions = {
 
 					set_variable = { casualties_civs_percent_for_state = state_population_k }
 					divide_variable = { casualties_civs_percent_for_state = ROOT.max_manpower_k }
-					log = "[?casualties_civs_percent_for_state]"
 					clamp_variable = {
 						var = casualties_civs_percent_for_state
 						min = 0.001
@@ -32,12 +31,6 @@ on_actions = {
 					round_variable = casualties_civs_to_be_removed_for_state
 					multiply_variable = { casualties_civs_to_be_removed_for_state = -1 }
 					add_manpower = casualties_civs_to_be_removed_for_state
-					if = {
-						limit = {
-							check_variable = { casualties_civs_to_be_removed_for_state < 0 }
-						}
-					}
-					log = "[SOV.GetNameWithFlag] - [?casualties_civs_to_be_removed_for_state]"
 				}
 			}
 			# War end/some shit happened
